@@ -1,0 +1,254 @@
+---
+import '../styles/global.css';
+---
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pote · disputas premiadas entre amigos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="wrap nav-in">
+      <div class="logo">
+        <span class="mark">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M5 9h14l-1.2 9.2a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8L5 9Z" fill="#0A0D0A"/><path d="M8 9a4 4 0 0 1 8 0" stroke="#0A0D0A" stroke-width="2"/><circle cx="12" cy="14" r="2.1" fill="#C2F23E"/></svg>
+        </span>
+        Pote
+      </div>
+      <div class="nav-links">
+        <a href="#como">Como funciona</a>
+        <a href="#casos">Casos</a>
+        <a href="#precos">Preços</a>
+        <a href="#" class="btn btn-primary">Criar uma pool</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="glow g1"></div>
+    <div class="glow g2"></div>
+    <div class="wrap hero-grid">
+      <div>
+        <div class="eyebrow reveal d1"><span class="dot"></span>Disputas premiadas entre amigos</div>
+        <h1 class="hero-title reveal d2">Crie a disputa.<br>A gente segura o pote.<br><span class="em">O vencedor leva.</span></h1>
+        <p class="sub reveal d3">Do desafio de academia ao campeonato de futebol amador. A galera entra no PIX, o dinheiro fica protegido até o fim e os vencedores recebem automático. Sem o amigo que some com a grana.</p>
+        <div class="hero-cta reveal d4">
+          <a href="#" class="btn btn-primary">Criar uma pool grátis
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="#0A0D0A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="#como" class="btn btn-ghost">Ver como funciona</a>
+        </div>
+        <div class="trust-line reveal d5">
+          <span><svg viewBox="0 0 24 24" fill="none"><path d="M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>Pote protegido</span>
+          <span><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Ou ganha, ou recebe de volta</span>
+          <span><svg viewBox="0 0 24 24" fill="none"><path d="M12 2v20M2 12h20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Tudo no PIX</span>
+        </div>
+      </div>
+
+      <div class="reveal d4">
+        <div class="pool-card">
+          <div class="pc-top">
+            <div>
+              <h3>Desafio GymRats 💪</h3>
+              <div class="sub">10 participantes · R$ 50 cada</div>
+            </div>
+            <span class="badge">Em andamento</span>
+          </div>
+          <div class="pc-pote">
+            <div>
+              <div class="lbl">Pote</div>
+              <div class="val">R$ 500</div>
+              <div class="lock"><svg viewBox="0 0 24 24" fill="none"><rect x="5" y="11" width="14" height="9" rx="2" stroke="currentColor" stroke-width="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3" stroke="currentColor" stroke-width="2"/></svg>Guardado até o fim</div>
+            </div>
+            <svg width="46" height="46" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#C2F23E" stroke-width="1.5" opacity=".4"/><path d="M12 7v5l3 2" stroke="#C2F23E" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <div class="rank">
+            <div class="rank-row p1"><span class="rank-pos">1</span><span class="rank-name">Bruno</span><span class="rank-prize">R$ 225</span></div>
+            <div class="rank-row p2"><span class="rank-pos">2</span><span class="rank-name">Carol</span><span class="rank-prize">R$ 135</span></div>
+            <div class="rank-row"><span class="rank-pos">3</span><span class="rank-name">Você</span><span class="rank-prize">R$ 90</span></div>
+          </div>
+          <div class="pc-foot"><span>Prêmio total</span><span class="pc-foot-v">R$ 450 <span class="pc-foot-tax">· após 10% de taxa</span></span></div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- USE CASES -->
+  <section id="casos" class="sec wrap">
+    <div class="sec-head">
+      <div class="kicker">Pra qualquer disputa</div>
+      <h2 class="sec-title">Se dá pra ranquear, dá pra valer prêmio.</h2>
+      <p>Performance própria ou palpite: todo mundo entra, pontua e os primeiros do ranking dividem o pote.</p>
+    </div>
+    <div class="cases">
+      <span class="case"><span class="ico">🏋️</span>Desafio fitness</span>
+      <span class="case"><span class="ico">⚽</span>Campeonato de futebol amador</span>
+      <span class="case"><span class="ico">🎮</span>Campeonatinho de CS</span>
+      <span class="case"><span class="ico">🏆</span>Bolão do Oscar</span>
+      <span class="case"><span class="ico">🎯</span>Liga de palpites</span>
+      <span class="case"><span class="ico">🃏</span>Torneio de pôquer</span>
+      <span class="case"><span class="ico">🏃</span>Corrida do grupo</span>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="como" class="sec wrap">
+    <div class="sec-head">
+      <div class="kicker">Como funciona</div>
+      <h2 class="sec-title">Quatro passos, zero rolo.</h2>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="si"><svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <h3>Cria a pool</h3>
+        <p>Você define a disputa, o valor da entrada, como o prêmio é dividido e quantas pessoas precisam entrar pra começar.</p>
+      </div>
+      <div class="step">
+        <div class="si"><svg viewBox="0 0 24 24" fill="none"><path d="M16 7a4 4 0 1 1-8 0 4 4 0 0 1 8 0ZM4 21a8 8 0 0 1 16 0" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <h3>A galera entra</h3>
+        <p>Cada um paga a entrada no PIX. O dinheiro fica guardado em segurança e ninguém mexe nele até o fim.</p>
+      </div>
+      <div class="step">
+        <div class="si"><svg viewBox="0 0 24 24" fill="none"><path d="M6 20V10M12 20V4M18 20v-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <h3>A disputa rola</h3>
+        <p>No fim, o organizador publica o ranking. Quem está no pote vota se está certo. Quando a maioria confirma, o prêmio é liberado.</p>
+      </div>
+      <div class="step">
+        <div class="si"><svg viewBox="0 0 24 24" fill="none"><path d="M8 21h8M12 17v4M5 4h14v5a7 7 0 0 1-14 0V4Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Vencedores recebem</h3>
+        <p>O pote é dividido automático entre os primeiros colocados, direto no PIX. Pronto.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST -->
+  <section class="sec wrap">
+    <div class="sec-head">
+      <div class="kicker">Sem rolo com o dinheiro</div>
+      <h2 class="sec-title">A confiança não fica com o tesoureiro do grupo.</h2>
+      <p>O que separava uma boa disputa de uma briga era sempre quem segurava a grana. A gente resolve isso.</p>
+    </div>
+    <div class="trust-grid">
+      <div class="tcard feat">
+        <div class="ti"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div>
+          <h3>Ou alguém ganha, ou todo mundo recebe de volta.</h3>
+          <p>Você define quantas pessoas precisam entrar pra disputa começar. Se não juntar gente suficiente, ninguém perde nada: quem já pôs dinheiro recebe tudo de volta.</p>
+        </div>
+      </div>
+      <div class="tcard">
+        <div class="ti"><svg viewBox="0 0 24 24" fill="none"><rect x="5" y="11" width="14" height="9" rx="2" stroke="currentColor" stroke-width="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3" stroke="currentColor" stroke-width="2"/></svg></div>
+        <div>
+          <h3>O dinheiro fica guardado</h3>
+          <p>A grana fica guardada numa conta separada até a disputa acabar. Nem você, nem o organizador conseguem tirar antes.</p>
+        </div>
+      </div>
+      <div class="tcard">
+        <div class="ti"><svg viewBox="0 0 24 24" fill="none"><path d="M16 7a4 4 0 1 1-8 0 4 4 0 0 1 8 0ZM4 21a8 8 0 0 1 16 0" stroke="currentColor" stroke-width="2"/></svg></div>
+        <div>
+          <h3>O grupo confirma o resultado</h3>
+          <p>Qualquer um que está no pote pode virar auditor e votar se o ranking do organizador está certo. Só vira pagamento quando a maioria confirma.</p>
+        </div>
+      </div>
+      <div class="tcard">
+        <div class="ti"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div>
+          <h3>Competição, não aposta</h3>
+          <p>É uma disputa de habilidade com o prêmio dividido por colocação, como um campeonato que cobra inscrição.</p>
+        </div>
+      </div>
+      <div class="tcard">
+        <div class="ti"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2v20M2 12h20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <div>
+          <h3>Tudo no PIX</h3>
+          <p>Entrada e prêmio caem na hora. Sem cartão, sem boleto, sem espera.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section id="precos" class="sec wrap">
+    <div class="sec-head">
+      <div class="kicker">Preços</div>
+      <h2 class="sec-title">Só ganha se a disputa rolar.</h2>
+    </div>
+    <div class="price-wrap">
+      <div>
+        <div class="price-big">10<small>% do pote</small></div>
+        <div class="price-sub">Quanto maior o pote, menor a taxa. Sem mensalidade, sem taxa escondida. Só entra quando a disputa começa.</div>
+      </div>
+      <ul class="price-list">
+        <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Sem mensalidade.</b> Criar pool é grátis.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Taxa decrescente.</b> Pote grande paga menos de 10%.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Não começou?</b> Você recebe de volta tudo o que pôs, sem cobrar nada.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Distribuição automática</b> pros vencedores, direto no PIX.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="sec wrap">
+    <div class="sec-head">
+      <div class="kicker">Perguntas</div>
+      <h2 class="sec-title">O que todo mundo pergunta.</h2>
+    </div>
+    <div class="faq">
+      <details open>
+        <summary>Isso é legal? É aposta?<span class="plus"><svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></summary>
+        <p>Não é aposta de azar. É uma competição premiada: o prêmio é dividido entre os primeiros colocados, igual a um campeonato que cobra inscrição. O resultado vem do desempenho ou do acerto dos participantes, não da sorte.</p>
+      </details>
+      <details>
+        <summary>Como o vencedor é decidido?<span class="plus"><svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></summary>
+        <p>O organizador publica o ranking final (que geralmente já existe no app de treino, na tabela do campeonato ou no placar). Qualquer participante pode se voluntariar como auditor e votar se está certo. Quando a maioria confirma, o pote é liberado e dividido conforme as regras combinadas no começo.</p>
+      </details>
+      <details>
+        <summary>E se não juntar gente suficiente?<span class="plus"><svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></summary>
+        <p>Você define um mínimo de gente pra disputa valer. Se não bater esse mínimo até a data de início, a disputa não começa e quem já entrou recebe tudo de volta, sem desconto nenhum. Agora, se a disputa já começou e no fim o grupo não chegar a um acordo sobre o resultado, o dinheiro também volta pra todo mundo, só que descontada a taxa, porque a competição chegou a acontecer.</p>
+      </details>
+      <details>
+        <summary>Onde fica o dinheiro durante a disputa?<span class="plus"><svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></summary>
+        <p>Fica guardado numa conta separada, cuidada por um parceiro de pagamentos. Não se mistura com o dinheiro de ninguém. Nem você nem o organizador consegue tirar antes da disputa terminar.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="sec wrap">
+    <div class="final">
+      <div class="glow g1"></div>
+      <h2>Bora ver quem é o melhor?</h2>
+      <p>Monte sua primeira disputa em menos de um minuto.</p>
+      <div class="hero-cta">
+        <a href="#" class="btn btn-primary">Criar uma pool grátis
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="#0A0D0A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="wrap">
+      <div class="foot-in">
+        <div class="logo">
+          <span class="mark"><svg viewBox="0 0 24 24" fill="none"><path d="M5 9h14l-1.2 9.2a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8L5 9Z" fill="#0A0D0A"/><path d="M8 9a4 4 0 0 1 8 0" stroke="#0A0D0A" stroke-width="2"/><circle cx="12" cy="14" r="2.1" fill="#C2F23E"/></svg></span>
+          Pote
+        </div>
+        <div>© 2026 Pote · Disputas premiadas entre amigos</div>
+      </div>
+      <div class="foot-note">Pote é uma plataforma de competições com divisão de prêmio. Não é uma casa de apostas. O dinheiro é guardado por um parceiro de pagamentos. Nome e identidade visual são provisórios.</div>
+    </div>
+  </footer>
+
+</body>
+</html>
