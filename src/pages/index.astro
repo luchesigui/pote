@@ -18,11 +18,110 @@ const cases = [
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pote · disputas premiadas entre amigos</title>
+  
+  <!-- SEO Básico -->
+  <title>Pote · Disputas Premiadas e Bolões Entre Amigos</title>
+  <meta name="description" content="Crie disputas premiadas e bolões com facilidade. A galera entra via PIX, o dinheiro fica protegido em conta de custódia e os vencedores recebem automaticamente. Sem cobranças e sem atrito.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://pote.app">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://pote.app">
+  <meta property="og:title" content="Pote · Disputas Premiadas e Bolões Entre Amigos">
+  <meta property="og:description" content="Crie disputas premiadas e bolões com facilidade. A galera entra via PIX, o dinheiro fica protegido e os vencedores recebem automaticamente.">
+  <meta property="og:image" content="https://pote.app/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Pote - Disputas premiadas entre amigos">
+  <meta property="og:site_name" content="Pote">
+  <meta property="og:locale" content="pt_BR">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://pote.app">
+  <meta name="twitter:title" content="Pote · Disputas Premiadas e Bolões Entre Amigos">
+  <meta name="twitter:description" content="Crie disputas premiadas e bolões com facilidade. A galera entra via PIX, o dinheiro fica protegido e os vencedores recebem automaticamente.">
+  <meta name="twitter:image" content="https://pote.app/og-image.jpg">
+
+  <!-- Fonts & Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+  <!-- Structured Data JSON-LD (AEO & SEO) -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebApplication",
+          "@id": "https://pote.app/#webapp",
+          "url": "https://pote.app",
+          "name": "Pote",
+          "applicationCategory": "FinanceApplication, SportsApplication",
+          "operatingSystem": "All",
+          "browserRequirements": "Requires HTML5 compatible browser",
+          "description": "Plataforma de disputas premiadas e bolões entre amigos com divisão automática de prêmios via PIX e saldo garantido em conta de custódia.",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "BRL",
+            "description": "Grátis para criar disputas. Taxa de administração decrescente cobrada apenas sobre o pote total da disputa iniciada."
+          }
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://pote.app/#organization",
+          "name": "Pote",
+          "url": "https://pote.app",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://pote.app/favicon.svg"
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://pote.app/#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Isso é legal? É aposta?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Sim, é totalmente legal. O Pote não opera jogos de azar ou apostas tradicionais. Trata-se de uma plataforma para disputas baseadas em habilidades esportivas, desafios de desempenho físico ou bolões de prognóstico de entretenimento, modalidades de competição com taxa de inscrição e premiação amparadas pelas diretrizes civis brasileiras."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Como o vencedor é decidido?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "O organizador envia a classificação final obtida pelo grupo (seja de um aplicativo de corrida, painel do campeonato ou ranking). Os participantes entram em modo de auditoria coletiva e votam para validar os resultados. Com a confirmação da maioria simples dos membros da disputa, o valor do pote é dividido e liberado."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "E se não juntar gente suficiente?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Caso o número mínimo de participantes definido pelo organizador não seja atingido até a data limite, a disputa é cancelada automaticamente. O valor pago por cada um é devolvido em 100% de forma integral via PIX, sem tarifas."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Onde fica o dinheiro durante a disputa?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "O dinheiro fica retido em uma conta digital de custódia operada por nosso parceiro de liquidação e pagamentos parceiro, devidamente homologado pelo Banco Central. O saldo permanece trancado e inacessível tanto para o organizador quanto para o Pote até a confirmação consensual do resultado."
+              }
+            }
+          ]
+        }
+      ]
+    }
+  </script>
 </head>
 <body>
 
@@ -44,6 +143,8 @@ const cases = [
     </div>
   </nav>
 
+  <main class="main-content">
+
   <!-- HERO -->
   <header class="hero">
     <div class="glow g1"></div>
@@ -52,11 +153,14 @@ const cases = [
       <div>
         <div class="eyebrow reveal d1"><span class="dot"></span>Disputas premiadas entre amigos</div>
         <h1 class="hero-title reveal d2">Crie a disputa.<br>A gente segura o pote.<br><span class="em">O vencedor leva.</span></h1>
-        <p class="sub reveal d3">Do desafio de academia ao campeonato de futebol amador. A galera entra no PIX, o dinheiro fica protegido até o fim e os vencedores recebem automático. Sem o amigo que some com a grana.</p>
-        <div class="hero-cta reveal d4">
-          <a href="#" class="btn btn-primary">Criar uma pool grátis
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="#0A0D0A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
+        <p class="sub reveal d3">Do desafio de academia ao bolão do Oscar. A galera entra via <strong>PIX individual</strong>, o dinheiro fica seguro em uma <strong>conta de custódia</strong> até o fim e os vencedores recebem <strong>automaticamente</strong>. Acabe com a dor de cabeça de cobrar os amigos ou ter desconfiança no grupo.</p>
+        <div class="hero-cta reveal d4" style="align-items: flex-start; gap: 14px;">
+          <div style="display: flex; flex-direction: column; gap: 6px;">
+            <a href="#" class="btn btn-primary">Criar uma pool grátis
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="#0A0D0A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <span style="font-size: 13px; color: var(--muted); opacity: 0.85; padding-left: 8px;">Criação instantânea · Sem baixar app</span>
+          </div>
           <a href="#como" class="btn btn-ghost">Ver como funciona</a>
         </div>
         <div class="trust-line reveal d5">
@@ -125,28 +229,28 @@ const cases = [
       <div class="kicker">Como funciona</div>
       <h2 class="sec-title">Quatro passos, zero rolo.</h2>
     </div>
-    <div class="steps">
-      <div class="step">
+    <ol class="steps">
+      <li class="step">
         <div class="si"><svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
         <h3>Cria a pool</h3>
-        <p>Você define a disputa, o valor da entrada, como o prêmio é dividido e quantas pessoas precisam entrar pra começar.</p>
-      </div>
-      <div class="step">
+        <p>Você define a <strong>disputa</strong>, o <strong>valor da entrada</strong>, as regras de divisão do prêmio e o mínimo de participantes para começar.</p>
+      </li>
+      <li class="step">
         <div class="si"><svg viewBox="0 0 24 24" fill="none"><path d="M16 7a4 4 0 1 1-8 0 4 4 0 0 1 8 0ZM4 21a8 8 0 0 1 16 0" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
         <h3>A galera entra</h3>
-        <p>Cada um paga a entrada no PIX. O dinheiro fica guardado em segurança e ninguém mexe nele até o fim.</p>
-      </div>
-      <div class="step">
+        <p>Cada participante paga sua entrada via <strong>PIX individual</strong>. O valor arrecadado fica guardado com <strong>segurança garantida</strong> até o fim.</p>
+      </li>
+      <li class="step">
         <div class="si"><svg viewBox="0 0 24 24" fill="none"><path d="M6 20V10M12 20V4M18 20v-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
         <h3>A disputa rola</h3>
-        <p>No fim, o organizador publica o ranking. Quem está no pote vota se está certo. Quando a maioria confirma, o prêmio é liberado.</p>
-      </div>
-      <div class="step">
+        <p>Ao término, o organizador publica o ranking final. O grupo atua como auditor e <strong>vota para validar</strong> o resultado de forma justa.</p>
+      </li>
+      <li class="step">
         <div class="si"><svg viewBox="0 0 24 24" fill="none"><path d="M8 21h8M12 17v4M5 4h14v5a7 7 0 0 1-14 0V4Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
         <h3>Vencedores recebem</h3>
-        <p>O pote é dividido automático entre os primeiros colocados, direto no PIX. Pronto.</p>
-      </div>
-    </div>
+        <p>Com a validação da maioria, o prêmio total é <strong>dividido e transferido automaticamente</strong> via PIX para as chaves dos vencedores.</p>
+      </li>
+    </ol>
   </section>
 
   <!-- TRUST -->
@@ -161,35 +265,35 @@ const cases = [
         <div class="ti"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
         <div>
           <h3>Ou alguém ganha, ou todo mundo recebe de volta.</h3>
-          <p>Você define quantas pessoas precisam entrar pra disputa começar. Se não juntar gente suficiente, ninguém perde nada: quem já pôs dinheiro recebe tudo de volta.</p>
+          <p>Você define o mínimo de participantes. Se a disputa <strong>não começar</strong>, o reembolso é <strong>100% automático e sem taxas</strong> direto no PIX de cada um.</p>
         </div>
       </div>
       <div class="tcard">
         <div class="ti"><svg viewBox="0 0 24 24" fill="none"><rect x="5" y="11" width="14" height="9" rx="2" stroke="currentColor" stroke-width="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3" stroke="currentColor" stroke-width="2"/></svg></div>
         <div>
           <h3>O dinheiro fica guardado</h3>
-          <p>A grana fica guardada numa conta separada até a disputa acabar. Nem você, nem o organizador conseguem tirar antes.</p>
+          <p>A grana fica <strong>protegida em uma conta de custódia</strong> regulada. Nem o organizador nem o Pote conseguem movimentar os fundos antes do término.</p>
         </div>
       </div>
       <div class="tcard">
         <div class="ti"><svg viewBox="0 0 24 24" fill="none"><path d="M16 7a4 4 0 1 1-8 0 4 4 0 0 1 8 0ZM4 21a8 8 0 0 1 16 0" stroke="currentColor" stroke-width="2"/></svg></div>
         <div>
           <h3>O grupo confirma o resultado</h3>
-          <p>Qualquer um que está no pote pode virar auditor e votar se o ranking do organizador está certo. Só vira pagamento quando a maioria confirma.</p>
+          <p>Qualquer participante do pote pode <strong>votar na validação</strong> do ranking. A liberação do prêmio depende da <strong>aprovação da maioria</strong>, evitando fraudes.</p>
         </div>
       </div>
       <div class="tcard">
         <div class="ti"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
         <div>
           <h3>Competição, não aposta</h3>
-          <p>É uma disputa de habilidade com o prêmio dividido por colocação, como um campeonato que cobra inscrição.</p>
+          <p>O Pote é voltado para <strong>disputas de habilidade ou prognósticos amigáveis</strong>. Opera conforme as leis de competições comerciais e concursos no Brasil.</p>
         </div>
       </div>
       <div class="tcard">
         <div class="ti"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2v20M2 12h20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
         <div>
           <h3>Tudo no PIX</h3>
-          <p>Entrada e prêmio caem na hora. Sem cartão, sem boleto, sem espera.</p>
+          <p>Entrada e recebimentos ocorrem <strong>instantaneamente via PIX</strong> direto na conta dos vencedores. Sem intermediários, sem atrasos.</p>
         </div>
       </div>
     </div>
@@ -207,10 +311,10 @@ const cases = [
         <div class="price-sub">Quanto maior o pote, menor a taxa. Sem mensalidade, sem taxa escondida. Só entra quando a disputa começa.</div>
       </div>
       <ul class="price-list">
-        <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Sem mensalidade.</b> Criar pool é grátis.</span></li>
-        <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Taxa decrescente.</b> Pote grande paga menos de 10%.</span></li>
-        <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Não começou?</b> Você recebe de volta tudo o que pôs, sem cobrar nada.</span></li>
-        <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Distribuição automática</b> pros vencedores, direto no PIX.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><strong>Grátis para criar.</strong> Sem mensalidade, taxas de adesão ou cobrança recorrente.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><strong>Taxa decrescente.</strong> 10% cobrados apenas sobre o pote vencedor, caindo em potes maiores.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><strong>Reembolso integral garantido.</strong> Se a disputa não atingir o quórum, todos recebem 100% de volta.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><strong>Divisão automatizada.</strong> Transferência direta via PIX para a carteira de cada vencedor.</span></li>
       </ul>
     </div>
   </section>
@@ -224,19 +328,19 @@ const cases = [
     <div class="faq">
       <details open>
         <summary>Isso é legal? É aposta?<span class="plus"><svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></summary>
-        <p>Não é aposta de azar. É uma competição premiada: o prêmio é dividido entre os primeiros colocados, igual a um campeonato que cobra inscrição. O resultado vem do desempenho ou do acerto dos participantes, não da sorte.</p>
+        <p><strong>Sim, é totalmente legal.</strong> O Pote não opera jogos de azar ou apostas tradicionais. Trata-se de uma plataforma para disputas baseadas em habilidades esportivas, desafios de desempenho físico ou bolões de prognóstico de entretenimento, modalidades de competição com taxa de inscrição e premiação amparadas pelas diretrizes civis brasileiras.</p>
       </details>
       <details>
         <summary>Como o vencedor é decidido?<span class="plus"><svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></summary>
-        <p>O organizador publica o ranking final (que geralmente já existe no app de treino, na tabela do campeonato ou no placar). Qualquer participante pode se voluntariar como auditor e votar se está certo. Quando a maioria confirma, o pote é liberado e dividido conforme as regras combinadas no começo.</p>
+        <p>O organizador envia a classificação final obtida pelo grupo (seja de um aplicativo de corrida, painel do campeonato ou ranking). Os participantes entram em modo de auditoria coletiva e <strong>votam para validar os resultados</strong>. Com a confirmação da maioria simples dos membros da disputa, o valor do pote é dividido e liberado.</p>
       </details>
       <details>
         <summary>E se não juntar gente suficiente?<span class="plus"><svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></summary>
-        <p>Você define um mínimo de gente pra disputa valer. Se não bater esse mínimo até a data de início, a disputa não começa e quem já entrou recebe tudo de volta, sem desconto nenhum. Agora, se a disputa já começou e no fim o grupo não chegar a um acordo sobre o resultado, o dinheiro também volta pra todo mundo, só que descontada a taxa, porque a competição chegou a acontecer.</p>
+        <p>Caso o número mínimo de participantes definido pelo organizador não seja atingido até a data limite, a disputa é cancelada automaticamente. O valor pago por cada um é <strong>devolvido em 100% de forma integral</strong> via PIX, sem tarifas. Se a disputa ocorrer e for concluída, mas o grupo não votar em comum acordo no final, o saldo é estornado com desconto da taxa administrativa de processamento do período.</p>
       </details>
       <details>
         <summary>Onde fica o dinheiro durante a disputa?<span class="plus"><svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></summary>
-        <p>Fica guardado numa conta separada, cuidada por um parceiro de pagamentos. Não se mistura com o dinheiro de ninguém. Nem você nem o organizador consegue tirar antes da disputa terminar.</p>
+        <p>O dinheiro fica retido em uma <strong>conta digital de custódia</strong> operada por nosso parceiro de liquidação e pagamentos, devidamente homologado pelo Banco Central. O saldo permanece trancado e inacessível tanto para o organizador quanto para o Pote até a confirmação consensual do resultado.</p>
       </details>
     </div>
   </section>
@@ -247,13 +351,16 @@ const cases = [
       <div class="glow g1"></div>
       <h2>Bora ver quem é o melhor?</h2>
       <p>Monte sua primeira disputa em menos de um minuto.</p>
-      <div class="hero-cta">
+      <div class="hero-cta" style="flex-direction: column; align-items: center; gap: 8px;">
         <a href="#" class="btn btn-primary">Criar uma pool grátis
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="#0A0D0A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
+        <span style="font-size: 13px; color: var(--muted); opacity: 0.85;">Criação imediata sem burocracia · Direto no navegador</span>
       </div>
     </div>
   </section>
+
+  </main>
 
   <!-- FOOTER -->
   <footer>
