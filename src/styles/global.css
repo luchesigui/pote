@@ -99,23 +99,15 @@ a {
   gap: 10px;
   font-family: "Bricolage Grotesque";
   font-weight: 800;
-  font-size: 21px;
+  font-size: 32px;
   letter-spacing: -0.03em;
 }
 
-.logo .mark {
-  width: 30px;
-  height: 30px;
-  border-radius: 9px;
-  background: var(--lime);
-  display: grid;
-  place-items: center;
+.logo .logo-img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
   flex: 0 0 auto;
-}
-
-.logo .mark svg {
-  width: 18px;
-  height: 18px;
 }
 
 .nav-links {
