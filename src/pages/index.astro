@@ -1,5 +1,17 @@
 ---
 import '../styles/global.css';
+
+const cases = [
+  { ico: "🏋️", text: "Desafio fitness" },
+  { ico: "⚽", text: "Campeonato de futebol amador" },
+  { ico: "🎮", text: "Campeonatinho de CS" },
+  { ico: "🏆", text: "Bolão do Oscar" },
+  { ico: "🎯", text: "Liga de palpites" },
+  { ico: "🃏", text: "Torneio de pôquer" },
+  { ico: "🏃", text: "Corrida do grupo" },
+  { ico: "🎾", text: "Torneio de beach tennis" },
+  { ico: "📺", text: "Bolão de reality show" }
+];
 ---
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -90,13 +102,20 @@ import '../styles/global.css';
       <p>Performance própria ou palpite: todo mundo entra, pontua e os primeiros do ranking dividem o pote.</p>
     </div>
     <div class="cases">
-      <span class="case"><span class="ico">🏋️</span>Desafio fitness</span>
-      <span class="case"><span class="ico">⚽</span>Campeonato de futebol amador</span>
-      <span class="case"><span class="ico">🎮</span>Campeonatinho de CS</span>
-      <span class="case"><span class="ico">🏆</span>Bolão do Oscar</span>
-      <span class="case"><span class="ico">🎯</span>Liga de palpites</span>
-      <span class="case"><span class="ico">🃏</span>Torneio de pôquer</span>
-      <span class="case"><span class="ico">🏃</span>Corrida do grupo</span>
+      <div class="cases-track">
+        {cases.map((c) => (
+          <span class="case">
+            <span class="ico">{c.ico}</span>
+            {c.text}
+          </span>
+        ))}
+        {cases.map((c) => (
+          <span class="case" aria-hidden="true">
+            <span class="ico">{c.ico}</span>
+            {c.text}
+          </span>
+        ))}
+      </div>
     </div>
   </section>
 

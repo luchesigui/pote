@@ -1,0 +1,590 @@
+---
+import "../styles/global.css";
+
+if (import.meta.env.PROD) {
+  return new Response("Not Found", { status: 404 });
+}
+---
+
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pote · Styleguide</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <style>
+      body {
+        padding-bottom: 120px;
+      }
+      .styleguide-header {
+        padding: 60px 0;
+        position: relative;
+      }
+      .styleguide-header h1 {
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+      .styleguide-section {
+        margin-bottom: 80px;
+      }
+      .styleguide-section-title {
+        font-size: 24px;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: var(--lime);
+        margin-bottom: 30px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      /* Grid for color swatches */
+      .color-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 20px;
+      }
+      .color-card {
+        background: var(--bg-2);
+        border: 1px solid var(--line-strong);
+        border-radius: var(--radius);
+        padding: 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+        transition:
+          transform 0.2s ease,
+          border-color 0.2s ease;
+      }
+      .color-card:hover {
+        transform: translateY(-2px);
+        border-color: var(--lime);
+      }
+      .color-swatch {
+        height: 100px;
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+      }
+      .color-info {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+      .color-name {
+        font-weight: 700;
+        font-size: 15px;
+        color: var(--cream);
+      }
+      .color-var {
+        font-family: monospace;
+        font-size: 13px;
+        color: var(--lime);
+      }
+      .color-hex {
+        font-size: 13px;
+        color: var(--muted);
+      }
+
+      /* Toast / Notification styles */
+      .toast {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        background: var(--lime);
+        color: #0a0d0a;
+        padding: 12px 24px;
+        border-radius: 100px;
+        font-family: "Hanken Grotesk", sans-serif;
+        font-weight: 600;
+        font-size: 14px;
+        box-shadow: 0 10px 30px -8px rgba(194, 242, 62, 0.55);
+        z-index: 1000;
+        opacity: 0;
+        transform: translateY(20px);
+        transition:
+          opacity 0.3s,
+          transform 0.3s;
+        pointer-events: none;
+      }
+      .toast.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Typography showcase */
+      .typo-row {
+        display: grid;
+        grid-template-columns: 200px 1fr;
+        gap: 30px;
+        padding: 20px 0;
+        border-bottom: 1px solid var(--line);
+        align-items: center;
+      }
+      .typo-label {
+        font-size: 14px;
+        color: var(--muted);
+        font-family: monospace;
+      }
+
+      /* Component Showcase Grid */
+      .comp-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        gap: 30px;
+      }
+      .comp-box {
+        background: var(--bg-2);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        justify-content: center;
+        position: relative;
+      }
+      .comp-box::after {
+        content: attr(data-label);
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        font-size: 10px;
+        font-family: monospace;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+      }
+      .flex-row {
+        display: flex;
+        gap: 15px;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      .full-width {
+        grid-column: 1 / -1;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- STYLEGUIDE HEADER -->
+    <header class="styleguide-header">
+      <div class="wrap">
+        <div class="glow g1"></div>
+        <div class="eyebrow">
+          <span class="dot"></span>Ambiente de Desenvolvimento
+        </div>
+        <h1>Styleguide de Pote</h1>
+        <p class="sub">
+          Guia de design, cores, tipografia e componentes para manter a
+          consistência visual do projeto.
+        </p>
+      </div>
+    </header>
+
+    <main class="wrap">
+      <!-- CORES -->
+      <section class="styleguide-section">
+        <h2 class="styleguide-section-title">Paleta de Cores</h2>
+        <p class="sub" style="margin-bottom: 24px;">
+          Clique em qualquer cor para copiar a variável CSS correspondente.
+        </p>
+        <div class="color-grid">
+          <div class="color-card" onclick="copyVar('--bg', '#0a0d0a')">
+            <div class="color-swatch" style="background: var(--bg);"></div>
+            <div class="color-info">
+              <span class="color-name">Background</span>
+              <span class="color-var">--bg</span>
+              <span class="color-hex">#0a0d0a</span>
+            </div>
+          </div>
+          <div class="color-card" onclick="copyVar('--bg-2', '#0e120c')">
+            <div class="color-swatch" style="background: var(--bg-2);"></div>
+            <div class="color-info">
+              <span class="color-name">Background Alt</span>
+              <span class="color-var">--bg-2</span>
+              <span class="color-hex">#0e120c</span>
+            </div>
+          </div>
+          <div class="color-card" onclick="copyVar('--surface', '#141a11')">
+            <div class="color-swatch" style="background: var(--surface);"></div>
+            <div class="color-info">
+              <span class="color-name">Surface 1</span>
+              <span class="color-var">--surface</span>
+              <span class="color-hex">#141a11</span>
+            </div>
+          </div>
+          <div class="color-card" onclick="copyVar('--surface-2', '#1a2116')">
+            <div class="color-swatch" style="background: var(--surface-2);">
+            </div>
+            <div class="color-info">
+              <span class="color-name">Surface 2</span>
+              <span class="color-var">--surface-2</span>
+              <span class="color-hex">#1a2116</span>
+            </div>
+          </div>
+          <div class="color-card" onclick="copyVar('--lime', '#c2f23e')">
+            <div class="color-swatch" style="background: var(--lime);"></div>
+            <div class="color-info">
+              <span class="color-name">Lime (Brand)</span>
+              <span class="color-var">--lime</span>
+              <span class="color-hex">#c2f23e</span>
+            </div>
+          </div>
+          <div class="color-card" onclick="copyVar('--lime-dim', '#a8d92f')">
+            <div class="color-swatch" style="background: var(--lime-dim);">
+            </div>
+            <div class="color-info">
+              <span class="color-name">Lime Dim</span>
+              <span class="color-var">--lime-dim</span>
+              <span class="color-hex">#a8d92f</span>
+            </div>
+          </div>
+          <div class="color-card" onclick="copyVar('--coral', '#ff6a3d')">
+            <div class="color-swatch" style="background: var(--coral);"></div>
+            <div class="color-info">
+              <span class="color-name">Coral</span>
+              <span class="color-var">--coral</span>
+              <span class="color-hex">#ff6a3d</span>
+            </div>
+          </div>
+          <div class="color-card" onclick="copyVar('--cream', '#f2f5ea')">
+            <div class="color-swatch" style="background: var(--cream);"></div>
+            <div class="color-info">
+              <span class="color-name">Cream (Text Primary)</span>
+              <span class="color-var">--cream</span>
+              <span class="color-hex">#f2f5ea</span>
+            </div>
+          </div>
+          <div class="color-card" onclick="copyVar('--muted', '#a9b29f')">
+            <div class="color-swatch" style="background: var(--muted);"></div>
+            <div class="color-info">
+              <span class="color-name">Muted (Text Sec)</span>
+              <span class="color-var">--muted</span>
+              <span class="color-hex">#a9b29f</span>
+            </div>
+          </div>
+          <div
+            class="color-card"
+            onclick="copyVar('--line', 'rgba(242, 245, 234, 0.1)')"
+          >
+            <div class="color-swatch" style="background: var(--line);"></div>
+            <div class="color-info">
+              <span class="color-name">Line Border</span>
+              <span class="color-var">--line</span>
+              <span class="color-hex">rgba(242,245,234,0.1)</span>
+            </div>
+          </div>
+          <div
+            class="color-card"
+            onclick="copyVar('--line-strong', 'rgba(242, 245, 234, 0.18)')"
+          >
+            <div class="color-swatch" style="background: var(--line-strong);">
+            </div>
+            <div class="color-info">
+              <span class="color-name">Line Strong</span>
+              <span class="color-var">--line-strong</span>
+              <span class="color-hex">rgba(242,245,234,0.18)</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TIPOGRAFIA -->
+      <section class="styleguide-section">
+        <h2 class="styleguide-section-title">Tipografia & Textos</h2>
+        <p class="sub" style="margin-bottom: 24px;">
+          Exemplo de escalas, pesos de fonte e tamanhos regulamentares.
+        </p>
+
+        <div class="typo-row">
+          <div class="typo-label">h1 (Bricolage)<br />max 52px</div>
+          <div>
+            <h1>Crie a disputa. A gente segura o pote.</h1>
+          </div>
+        </div>
+
+        <div class="typo-row">
+          <div class="typo-label">h2.sec-title<br />clamp(30px, 46px)</div>
+          <div>
+            <h2 class="sec-title">Se dá pra ranquear, dá pra valer prêmio.</h2>
+          </div>
+        </div>
+
+        <div class="typo-row">
+          <div class="typo-label">h3<br />18px / 19px</div>
+          <div>
+            <h3>Desafio GymRats 💪</h3>
+          </div>
+        </div>
+
+        <div class="typo-row">
+          <div class="typo-label">p.sub / .sub<br />19px / 18px</div>
+          <div>
+            <p class="sub" style="margin: 0;">
+              Do desafio de academia ao campeonato de futebol amador. A galera
+              entra no PIX, o dinheiro fica protegido até o fim e os vencedores
+              recebem automático.
+            </p>
+          </div>
+        </div>
+
+        <div class="typo-row">
+          <div class="typo-label">body text<br />17px</div>
+          <div>
+            Cada um paga a entrada no PIX. O dinheiro fica guardado em segurança
+            e ninguém mexe nele até o fim.
+          </div>
+        </div>
+
+        <div class="typo-row">
+          <div class="typo-label">.eyebrow / kicker<br />13px</div>
+          <div>
+            <span class="eyebrow" style="margin-bottom:0;"
+              ><span class="dot"></span>Disputas premiadas entre amigos</span
+            >
+            <span class="kicker" style="margin-left: 20px;">Como funciona</span>
+          </div>
+        </div>
+
+        <div class="typo-row">
+          <div class="typo-label">.badge / small text<br />12px</div>
+          <div>
+            <span class="badge">Em andamento</span>
+            <span
+              style="font-size: 12px; color: var(--muted); margin-left: 20px;"
+              >10 participantes · R$ 50 cada</span
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- COMPONENTES -->
+      <section class="styleguide-section">
+        <h2 class="styleguide-section-title">Componentes</h2>
+        <p class="sub" style="margin-bottom: 24px;">
+          Exemplos de componentes reutilizáveis conforme as guidelines de
+          design.
+        </p>
+
+        <div class="comp-grid">
+          <!-- Buttons Box -->
+          <div class="comp-box" data-label="Botões & Badges">
+            <div class="flex-row">
+              <a href="#" class="btn btn-primary">
+                Criar uma pool grátis
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                  ><path
+                    d="M5 12h14M13 6l6 6-6 6"
+                    stroke="#0A0D0A"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"></path></svg
+                >
+              </a>
+              <a href="#" class="btn btn-ghost">Ver como funciona</a>
+            </div>
+            <div class="flex-row">
+              <span class="badge">Badge Exemplo</span>
+              <span class="case"
+                ><span class="ico">🏋️</span>Desafio fitness</span
+              >
+            </div>
+          </div>
+
+          <!-- Details Box -->
+          <div class="comp-box" data-label="Details / FAQ">
+            <div class="faq" style="border: none; width: 100%;">
+              <details open style="border-top: 1px solid var(--line);">
+                <summary style="font-size: 16px; padding: 12px 0;"
+                  >Isso é legal? É aposta?<span class="plus"
+                    ><svg width="11" height="11" viewBox="0 0 24 24" fill="none"
+                      ><path
+                        d="M12 5v14M5 12h14"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"></path></svg
+                    ></span
+                  ></summary
+                >
+                <p style="padding-bottom: 12px; font-size: 14px;">
+                  Não é aposta de azar. É uma competição premiada: o prêmio é
+                  dividido entre os primeiros colocados.
+                </p>
+              </details>
+            </div>
+          </div>
+
+          <!-- Trust Card & Step Card -->
+          <div class="comp-box full-width" data-label="Trust Card & Step Card">
+            <div class="trust-grid" style="width: 100%;">
+              <div class="tcard">
+                <div class="ti">
+                  <svg viewBox="0 0 24 24" fill="none"
+                    ><rect
+                      x="5"
+                      y="11"
+                      width="14"
+                      height="9"
+                      rx="2"
+                      stroke="currentColor"
+                      stroke-width="2"></rect><path
+                      d="M8 11V8a4 4 0 0 1 8 0v3"
+                      stroke="currentColor"
+                      stroke-width="2"></path></svg
+                  >
+                </div>
+                <div>
+                  <h3>O dinheiro fica guardado</h3>
+                  <p>
+                    A grana fica guardada numa conta separada até a disputa
+                    acabar.
+                  </p>
+                </div>
+              </div>
+              <div class="step" style="counter-reset: s; width: 100%;">
+                <div class="si">
+                  <svg viewBox="0 0 24 24" fill="none"
+                    ><path
+                      d="M12 5v14M5 12h14"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"></path></svg
+                  >
+                </div>
+                <h3>Cria a pool</h3>
+                <p>
+                  Você define a disputa, o valor da entrada e como o prêmio é
+                  dividido.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Featured Card -->
+          <div class="comp-box full-width" data-label="Featured Trust Card">
+            <div class="tcard feat">
+              <div class="ti">
+                <svg viewBox="0 0 24 24" fill="none"
+                  ><path
+                    d="M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3Z"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linejoin="round"></path><path
+                    d="M9 12l2 2 4-4"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"></path></svg
+                >
+              </div>
+              <div>
+                <h3>Ou alguém ganha, ou todo mundo recebe de volta.</h3>
+                <p>
+                  Você define quantas pessoas precisam entrar pra disputa
+                  começar. Se não juntar gente suficiente, ninguém perde nada.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pool Card Showcase -->
+          <div class="comp-box full-width" data-label="Pote Card Preview">
+            <div style="max-width: 400px; margin: 0 auto; width: 100%;">
+              <div class="pool-card" style="animation: none;">
+                <div class="pc-top">
+                  <div>
+                    <h3>Desafio GymRats 💪</h3>
+                    <div class="sub">10 participantes · R$ 50 cada</div>
+                  </div>
+                  <span class="badge">Em andamento</span>
+                </div>
+                <div class="pc-pote">
+                  <div>
+                    <div class="lbl">Pote</div>
+                    <div class="val">R$ 500</div>
+                    <div class="lock">
+                      <svg viewBox="0 0 24 24" fill="none"
+                        ><rect
+                          x="5"
+                          y="11"
+                          width="14"
+                          height="9"
+                          rx="2"
+                          stroke="currentColor"
+                          stroke-width="2"></rect><path
+                          d="M8 11V8a4 4 0 0 1 8 0v3"
+                          stroke="currentColor"
+                          stroke-width="2"></path></svg
+                      >Guardado até o fim
+                    </div>
+                  </div>
+                  <svg width="46" height="46" viewBox="0 0 24 24" fill="none"
+                    ><circle
+                      cx="12"
+                      cy="12"
+                      r="9"
+                      stroke="#C2F23E"
+                      stroke-width="1.5"
+                      opacity=".4"></circle><path
+                      d="M12 7v5l3 2"
+                      stroke="#C2F23E"
+                      stroke-width="2"
+                      stroke-linecap="round"></path></svg
+                  >
+                </div>
+                <div class="rank">
+                  <div class="rank-row p1">
+                    <span class="rank-pos">1</span><span class="rank-name"
+                      >Bruno</span
+                    ><span class="rank-prize">R$ 225</span>
+                  </div>
+                  <div class="rank-row p2">
+                    <span class="rank-pos">2</span><span class="rank-name"
+                      >Carol</span
+                    ><span class="rank-prize">R$ 135</span>
+                  </div>
+                  <div class="rank-row">
+                    <span class="rank-pos">3</span><span class="rank-name"
+                      >Você</span
+                    ><span class="rank-prize">R$ 90</span>
+                  </div>
+                </div>
+                <div class="pc-foot">
+                  <span>Prêmio total</span><span class="pc-foot-v"
+                    >R$ 450 <span class="pc-foot-tax">· após 10% de taxa</span
+                    ></span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div class="toast" id="toast">Copiado para a área de transferência!</div>
+
+    <script is:inline>
+      function copyVar(cssVar, val) {
+        navigator.clipboard.writeText(cssVar).then(function () {
+          var toast = document.getElementById("toast");
+          toast.textContent = "Copiado: " + cssVar + " (" + val + ")";
+          toast.classList.add("show");
+          setTimeout(function () {
+            toast.classList.remove("show");
+          }, 2000);
+        });
+      }
+    </script>
+  </body>
+</html>
